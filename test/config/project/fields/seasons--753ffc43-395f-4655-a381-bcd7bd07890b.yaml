@@ -1,0 +1,25 @@
+columnSuffix: null
+handle: seasons
+instructions: null
+name: Seasons
+searchable: false
+settings:
+  createButtonLabel: 'Add seasons'
+  defaultIndexViewMode: cards
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 79dfc50b-c222-4ba2-86bc-a3dfd89e2fa2 # Season
+  includeTableView: false
+  maxEntries: null
+  minEntries: 1
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

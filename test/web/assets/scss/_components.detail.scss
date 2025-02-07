@@ -1,0 +1,88 @@
+.c-detail {
+    &_title {
+      color: $color-white;
+      &-container{
+        margin-top: 5rem;
+      }
+    }
+    &_info {
+      color: $color-white !important;
+    }
+    &_related {
+      &-container {
+        // margin-top: 10rem !important;
+        display: flex !important;
+        flex-flow: row !important;
+      }
+    }
+    &_description {
+      color: $color-white;
+      margin-bottom: 2rem !important;
+      margin-top: 2rem !important;
+      width: 50vw;
+      font-size: 1.3rem;
+    }
+    &_container {
+      margin-bottom: 2rem;
+      border-radius: 0.2rem;
+      background-color: $color-dark-gray;
+      color: $color-light-gray;
+      width: 420px;
+      min-height: 450px;
+      &-info {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        &-title {
+          padding-bottom: 1rem;
+          font-size: 1.1rem;
+        }
+        &-description {
+          font-size: 1rem;
+          padding-bottom: 1rem;
+        }
+      }
+    }
+    &_img {
+      width: 420px;
+      height: 250px;
+      border-radius: 0.2rem;
+      object-fit: cover !important;
+    }
+    &_dropdown {
+      margin-top: 5rem;
+      border-radius: 0.2rem;
+      background-color: $color-dark-gray;
+      color: $color-white;
+      padding: 3px;
+    }
+    &_episode {
+      display: flex;
+      align-items: center;
+      margin-bottom: 3rem;
+      background-color: $color-dark-gray;
+      border-radius: 0.2rem;
+      color: $color-white;
+      padding: 1rem;
+      &-number {
+        font-weight: bold;
+      }
+      &-info {
+        margin-left: 2rem;
+        &-title {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+      }
+    }
+    &_title {
+      color: $color-white;
+    //   margin-left: 1rem;
+      &-season{
+        margin-top: 3rem;
+        margin-left: 0;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }

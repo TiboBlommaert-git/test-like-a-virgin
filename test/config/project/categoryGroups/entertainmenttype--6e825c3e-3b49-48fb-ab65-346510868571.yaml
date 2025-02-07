@@ -1,0 +1,50 @@
+defaultPlacement: end
+fieldLayouts:
+  a6dfcc63-2fbf-4c17-8a04-8c360c9f088f:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-02-01T21:12:34+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            uid: 3a75a124-af90-4d0d-b294-e2f78f47f9c7
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 11f8e84b-b045-40c9-bcac-358d659078c5
+        userCondition: null
+handle: entertainmenttype
+name: EntertainmentType
+siteSettings:
+  42d22dbe-84d2-4001-9678-7563afb30b6d: # netflix
+    hasUrls: true
+    template: entertainment/_type.twig
+    uriFormat: 'entertainmenttype/{slug}'
+structure:
+  maxLevels: 1
+  uid: 5b734b7b-6255-4235-887a-eb55787af17b

@@ -1,0 +1,19 @@
+{% extends '_layout' %}
+
+{% block content %}
+	{% set genres = craft.categories.group('genres').all() %}
+
+	{% set genreCounts = [] %}
+	{% for genre in genres %}
+		{% set count = craft.entries()
+        .relatedTo(genre)
+        .count() 
+    %}
+		{% set genreCounts = genreCounts | merge([{ genre: genre.title, count: count }]) %}
+	{% endfor %}
+	<div class="container c-chart">
+		<div class="row">
+			<canvas id="genreChart" data-genre-counts='{{ genreCounts | json_encode | raw }}' width="400" height="200"></canvas>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 9e27802e-6bd7-4afa-9df4-4bbf1f1988b2 # Entertainment
+handle: Entertainment
+maxAuthors: 1
+name: Entertainment
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  42d22dbe-84d2-4001-9678-7563afb30b6d: # netflix
+    enabledByDefault: true
+    hasUrls: true
+    template: entertainment/_entry.twig
+    uriFormat: 'entertainment/{slug}'
+type: channel

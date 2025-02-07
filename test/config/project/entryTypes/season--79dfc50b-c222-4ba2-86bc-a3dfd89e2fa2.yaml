@@ -1,0 +1,83 @@
+color: null
+fieldLayouts:
+  7684e4c0-3ea7-4138-bb1d-f51833971c67:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-02-03T16:28:25+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 6afa7214-4fb0-4258-b6e5-cbf45fc56f5b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-02-03T16:30:23+00:00'
+            elementCondition: null
+            fieldUid: 68814eaa-a5b4-4a86-8131-22f7ad4133dc # season
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: Season
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fb11b17d-fbec-4a42-893e-1033882c2ce9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-02-03T16:34:07+00:00'
+            elementCondition: null
+            fieldUid: dcb6caf4-698e-40a8-8a42-09aa056bb219 # episodes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: Episodes
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 066fa420-882d-4715-a394-40ffae3b0d24
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: aa236810-60ac-4c52-94f3-680b5932f5b9
+        userCondition: null
+handle: season
+hasTitleField: true
+icon: null
+name: Season
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

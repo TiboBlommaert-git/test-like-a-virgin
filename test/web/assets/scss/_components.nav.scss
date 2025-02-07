@@ -1,0 +1,43 @@
+.c-nav {
+    margin-top: 1rem;
+    &_container {
+      display: flex !important;
+      justify-content: space-between;
+    }
+    &_logo {
+      width: 10%;
+    }
+    &_settings {
+      display: flex !important;
+      flex-flow: row;
+      &-language {
+        padding: 3px;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 150px;
+        background-color: black !important;
+        color: $color-white;
+        padding-left: 30px;
+        border-radius: 0.2rem;
+        &-menu {
+          background-color: transparent !important;
+        }
+        &-container {
+          position: relative;
+          display: inline-block;
+          margin-right: 2rem;
+          &::after {
+            content: "▼";
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            font-size: 10px;
+            color: $color-white !important;
+          }
+        }
+      }
+    }
+  }

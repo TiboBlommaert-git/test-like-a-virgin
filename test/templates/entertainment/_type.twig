@@ -1,0 +1,36 @@
+{% extends '_layout' %}
+
+{# alle films of series inladen dus per type  #}
+
+{% set posts = craft.entries()
+    .section('entertainment')
+    .postEntertainmentType(category)
+    .orderBy('title ASC')
+    .all() 
+%}
+
+
+{% block content %}
+	<div class="container c-type_container">
+		<h1 class="c-type_title">
+			{{ category.title }}s</h1>
+		<div class="c-type">
+			<div class="c-type_wrapper">
+				<div class="row">
+					{% for post in posts %}
+						{% set image = post.featureImage.one() %}
+						<article class="me-3" style=" width: 420px;">
+							{% if image %}
+								<div class="c-type_thumbnail">
+									<a href="{{ post.url }}">
+										<img src="{{ image.getUrl() }}" alt="{{ image.title }}" class="c-list_img">
+									</a>
+								</div>
+							{% endif %}
+						</article>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

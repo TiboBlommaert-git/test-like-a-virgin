@@ -1,0 +1,21 @@
+body {
+  background: $color-black;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none !important;
+  color: $color-white !important;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.container {
+  --container-padding: 15px;
+}
+
+.container-fluid {
+  padding: 0;
+}

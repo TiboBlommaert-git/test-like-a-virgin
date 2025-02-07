@@ -1,0 +1,21 @@
+columnSuffix: null
+handle: postGenre
+instructions: null
+name: 'Post Genre'
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
+  selectionLabel: null
+  showCardsInGrid: false
+  showSiteMenu: true
+  source: 'group:dccc9516-b78b-4350-92de-3ccfd3c5eed5' # Genres
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Categories

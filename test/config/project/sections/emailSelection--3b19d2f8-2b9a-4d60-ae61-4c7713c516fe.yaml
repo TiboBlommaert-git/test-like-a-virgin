@@ -1,0 +1,28 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: dbae1d57-173a-4d08-9145-9a1a454fea16 # email
+handle: emailSelection
+maxAuthors: 1
+name: 'email selection'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  42d22dbe-84d2-4001-9678-7563afb30b6d: # netflix
+    enabledByDefault: true
+    hasUrls: true
+    template: email-selection/_entry.twig
+    uriFormat: 'email-selection/{slug}'
+type: channel

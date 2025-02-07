@@ -1,0 +1,209 @@
+{% extends '_layout' %}
+
+{# alle categorieën waarvoor ik een lijst wil #}
+{% set categorySlugs = ['action', 'comedy', 'crime', 'mysterie', 'dark', 'fantasy' , 'drama', 'sc-fi', 'adventure', 'thriller'] %}
+
+{# alle types waarvoor ik een lijst wil #}
+{% set typeSlugs = ['movie', 'serie'] %}
+
+
+{% block content %}
+	<div class="container-fluid">
+		<div class="c-banner"></div>
+		<div class="container c-banner_info">
+			<div class="">
+				<div class="d-flex">
+					<div class="c-banner_top text-center d-flex align-items-center">
+						<div>Top 10</div>
+					</div>
+					<h1 class="c-banner_info-title">#8 in TV Shows today</h1>
+				</div>
+				<p class="c-banner_info-description">Winning Six Emmys, this world-renowned survival thriller follows desperate players competing in deadly children's games for life changing sums of money.</p>
+				<div class="d-flex">
+					<button class="c-button c-button_banner d-flex align-items-center justify-content-center">
+						<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-play-fill c-banner_info-button-icon" viewbox="0 0 16 16">
+							<path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+						</svg>
+						<p>Play</p>
+					</button>
+					<button class="c-button c-button_banner c-button_banner-info d-flex align-items-center justify-content-center">
+						<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="#fff" class="bi bi-info-circle c-button_banner-info-icon" viewbox="0 0 16 16">
+							<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+							<path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+						</svg>
+						<p>More info</p>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="c-list container">
+		<h3 class="c-list_title">All movies / series</h3>
+
+		<div class="c-list_wrapper">
+			<div class="row d-flex flex-nowrap overflow-auto c-list_scroll" style="scroll-snap-type: x mandatory;">
+				{% for post in craft.entries().section('entertainment').all() %}
+					{% set image = post.featureImage.one() %}
+					{% set category = post.postGenre.one() %}
+					<article class="me-3" style="scroll-snap-align: start; width: 250px;">
+						{% if image %}
+							<div class="c-list_thumbnail">
+								<a href="{{ post.url }}">
+									<img src="{{ image.getUrl() }}" alt="{{ image.title }}" class="c-list_img">
+								</a>
+							</div>
+						{% endif %}
+					</article>
+				{% endfor %}
+			</div>
+		</div>
+		<div class="c-list">
+			<h3 class="c-list_title">All movies / series ordered alphabetical</h3>
+
+			<div class="row d-flex flex-nowrap overflow-auto c-list_scroll" style="scroll-snap-type: x mandatory;">
+				{% for post in craft.entries()
+					.section('entertainment')
+					.orderBy('title ASC')
+					.all() 
+				%}
+					{% set image = post.featureImage.one() %}
+					{% set category = post.postGenre.one() %}
+					<article class="me-3" style="scroll-snap-align: start; width: 250px;">
+						{% if image %}
+							<div class="c-list_thumbnail">
+								<a href="{{ post.url }}">
+									<img src="{{ image.getUrl() }}" alt="{{ image.title }}" class="c-list_img">
+								</a>
+							</div>
+						{% endif %}
+					</article>
+				{% endfor %}
+			</div>
+		</div>
+
+
+		<div class="c-list">
+			<h3 class="c-list_title">New on Netflix</h3>
+			<div class="row d-flex flex-nowrap overflow-auto c-list_scroll" style="scroll-snap-type: x mandatory;">
+				{% set newestMovies = craft.entries()
+					.section('entertainment')
+					.orderBy('postDate DESC')
+					.limit(10)      
+					.all() 
+				%}
+
+				{% for post in newestMovies %}
+					{% set image = post.featureImage.one() %}
+					<article class="me-3" style="scroll-snap-align: start; width: 250px;">
+						{% if image %}
+							<a href="{{ post.url }}">
+								<div class="c-trending_thumbnail d-flex">
+									<p class="c-trending_ranking">{{ loop.index }}</p>
+									<img src="{{ image.getUrl() }}" alt="{{ image.title }}" class="c-trending_img">
+								</div>
+							</a>
+						{% endif %}
+					</article>
+				{% endfor %}
+			</div>
+		</div>
+
+
+		<div class="c-list">
+			<h3 class="c-list_title">Top 10
+			</h3>
+			<div class="row d-flex flex-nowrap overflow-auto c-list_scroll" style="scroll-snap-type: x mandatory;">
+				{% set topRatedMovies = craft.entries()
+					.section('entertainment')
+					.orderBy('rating DESC') 
+					.limit(10)      
+					.all() 
+				%}
+
+				{% for post in topRatedMovies %}
+					{% set image = post.featureImage.one() %}
+					{% set rating = post.rating ?? 0 %}
+
+					<article class="me-3 c-trending_scroll" style="scroll-snap-align: start; width: 250px;">
+						{% if image %}
+							<a href="{{ post.url }}">
+								<div class="c-trending_thumbnail d-flex">
+									<p class="c-trending_ranking">{{ loop.index }}</p>
+									<img src="{{ image.getUrl() }}" alt="{{ image.title }}" class="c-trending_img">
+								</div>
+							</a>
+						{% endif %}
+					</article>
+				{% endfor %}
+			</div>
+		</div>
+
+		{# alle types inladen die ik bovenaan gedefined (movie, serie) #}
+
+		{% for typeSlug in typeSlugs %}
+			{% set type = craft.categories.slug(typeSlug).one() %}
+			{% if type %}
+				<div class="c-list">
+					<h3 class="c-list_title">
+						{{ type.title }}s</h3>
+					<div class="row d-flex flex-nowrap overflow-auto c-list_scroll" style="scroll-snap-type: x mandatory;">
+						{% set posts = craft.entries()
+							.section('entertainment')
+							.relatedTo(type)
+							.all()
+						%}
+
+						{% for post in posts %}
+							{% set image = post.featureImage.one() %}
+							<article class="me-3" style="scroll-snap-align: start; width: 250px;">
+								{% if image %}
+									<div class="c-list_thumbnail">
+										<a href="{{ post.url }}">
+											<img src="{{ image.getUrl() }}" alt="{{ image.title }}" class="c-list_img" style="">
+										</a>
+										<p>{{ type.title }}</p>
+									</div>
+								{% endif %}
+							</article>
+						{% endfor %}
+					</div>
+				</div>
+			{% endif %}
+		{% endfor %}
+
+
+		{# alle genres inladen die ik bovenaan gedefined (Sci-fi, crime, ...) #}
+
+		{% for categorySlug in categorySlugs %}
+			{% set category = craft.categories.slug(categorySlug).one() %}
+			{% if category %}
+				<div class="c-list">
+					<h3 class="c-list_title">
+						{{ category.title }}</h3>
+					<div class="row d-flex flex-nowrap overflow-auto c-list_scroll" style="scroll-snap-type: x mandatory;">
+						{% set posts = craft.entries()
+							.section('entertainment')
+							.relatedTo(category)
+							.all()
+						%}
+
+						{% for post in posts %}
+							{% set image = post.featureImage.one() %}
+							<article class="me-3" style="scroll-snap-align: start; width: 250px;">
+								{% if image %}
+									<div class="c-list_thumbnail">
+										<a href="{{ post.url }}">
+											<img src="{{ image.getUrl() }}" alt="{{ image.title }}" class="c-list_img" style="">
+										</a>
+										<p>{{ category.title }}</p>
+									</div>
+								{% endif %}
+							</article>
+						{% endfor %}
+					</div>
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+{% endblock %}

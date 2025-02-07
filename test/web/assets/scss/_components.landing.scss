@@ -1,0 +1,15 @@
+.c-landing {
+    margin-top: -35rem;
+    color: $color-white !important;
+    position: relative !important;
+    z-index: 10;
+    &_container {
+      position: relative;
+      z-index: 100;
+    }
+    &_header {
+      font-size: 3.5rem;
+      font-weight: bold;
+      width: 30rem;
+    }
+  }

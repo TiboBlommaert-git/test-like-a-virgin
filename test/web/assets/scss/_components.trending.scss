@@ -1,0 +1,39 @@
+.c-trending {
+    &_wrapper {
+      width: 100%;
+    }
+    &_scroll {
+      margin-right: 1rem;
+    }
+    &_thumbnail {
+      width: 200px;
+      height: 300px;
+      margin-bottom: 2rem;
+      margin-right: 2.5rem;
+    }
+    &_container {
+      margin-top: 6rem;
+    }
+    &_title {
+      color: $color-white !important;
+      margin-bottom: 2rem !important;
+    }
+    &_ranking {
+      position: relative;
+      z-index: 3;
+      margin-top: 10rem;
+      margin-right: -2rem;
+      color: black !important;
+      font-size: 6rem;
+      color: $color-white;
+      -webkit-text-stroke: 2px $color-white;
+      font-weight: bold;
+    }
+    &_img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 0.5rem;
+    }
+  }

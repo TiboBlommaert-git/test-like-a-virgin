@@ -1,0 +1,25 @@
+columnSuffix: null
+handle: episodes
+instructions: null
+name: episodes
+searchable: false
+settings:
+  createButtonLabel: Episode
+  defaultIndexViewMode: cards
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 32f9b698-4e20-4835-a92c-243379e2b1d6 # Episode
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

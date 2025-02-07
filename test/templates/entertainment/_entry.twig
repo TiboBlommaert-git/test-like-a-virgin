@@ -1,0 +1,130 @@
+{% extends '_layout' %}
+
+{% set featureImage = entry.featureImage.one() %}
+{% set genres = entry.postGenre.all() %}
+{% set type = entry.postEntertainmentType.one() %}
+{% set rating = entry.rating %}
+{% set seasons = entry.seasons.all() %}
+
+{% set allEntries = craft.entries()
+    .section('entertainment')  
+    .orderBy('rating desc') 
+    .all() 
+%}
+
+{# kijken als de entry in de top 10 zit #}
+
+{% set topRatedEntries = allEntries|slice(0, 10) %}
+
+{% set isTop10 = false %}
+{% for entryInTop in topRatedEntries %}
+	{% if entryInTop.id == entry.id %}
+		{% set isTop10 = true %}
+	{% endif %}
+{% endfor %}
+
+{# zoeken naar alle entries die gerelateerd zijn met de genres #}
+{% set relatedEntries = craft.entries()
+    .section('entertainment')
+    .relatedTo(genres)  
+    .all()
+%}
+
+{% block content %}
+	<div class="container-fluid container_entry">
+		<div class="c-detail">
+			<div class="c-banner" style="background-image: url('{{ featureImage.getUrl() }}');"></div>
+			<div class="container c-banner_info">
+				<div class="">
+					<div class="d-flex">
+						{% if isTop10 %}
+							<div class="c-banner_top text-center d-flex align-items-center">
+								<div>Top 10</div>
+							</div>
+						{% endif %}
+						<h1 class="c-detail_title">{{entry.title}}</h1>
+					</div>
+					<p class="c-detail_description">{{entry.description}}</p>
+					<p class="c-detail_info">Genres:
+						{% for genre in genres %}
+							{{ genre.getLink() }}
+							{% if not loop.last %},
+							{% endif %}
+						{% endfor %}
+					</p>
+					<p class="c-detail_info">Rating:
+						{{entry.rating}}/10</p>
+					<div class="d-flex">
+						<button class="c-button c-button_banner d-flex justify-content-center align-items-center">
+							<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-play-fill c-banner_info-button-icon" viewbox="0 0 16 16">
+								<path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/>
+							</svg>
+							<p>Play</p>
+						</button>
+						<button class="c-button c-button_banner c-button_banner-info d-flex justify-content-center align-items-center">
+							<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="#fff" class="bi bi-info-circle  c-button_banner-info-icon" viewbox="0 0 16 16">
+								<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+								<path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/>
+							</svg>
+							<p>More info</p>
+						</button>
+					</div>
+					{% if seasons|length %}
+						<select id="seasonDropdown" onchange="showEpisodes(this.value)" class="c-detail_dropdown">
+							{% for season in seasons %}
+								<option value="season-{{ loop.index }}" {% if loop.index == 1 %} selected {% endif %}>
+									Season
+									{{ season.season }}
+								</option>
+							{% endfor %}
+						</select>
+						{% for season in seasons %}
+							<div id="season-{{ loop.index }}" class="episodes" style="display: none;">
+								<h3 class="c-detail_title c-detail_title-season">Episodes</h3>
+								{% for episode in season.episodes %}
+									<div class="c-detail_episode">
+										<h4 class="c-detail_episode-number">{{episode.episode}}</h4>
+										<div class="c-detail_episode-info">
+											<p class="c-detail_episode-info-title">{{episode.title}}</p>
+											<p>{{episode.description}}</p>
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+						{% endfor %}
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container c-detail_title-container">
+		<h3 class="c-list_title">Related movies/series</h3>
+	</div>
+	<div class="container c-detail_related-container">
+		<div class="row d-flex justify-content-center">
+			{% for relatedEntry in relatedEntries %}
+				{% if relatedEntry.id != entry.id %}
+					{% set image = relatedEntry.featureImage.one() %}
+					{% set description = relatedEntry.description|split('.')|slice(0, 4)|join('.') %}
+					{% set seasons = entry.seasons.all() %}
+					<article class="me-3" style=" width: 420px;">
+						{% if image %}
+							<div class="c-detail_container">
+								<a href="{{ relatedEntry.url }}">
+									<img src="{{ image.getUrl() }}" alt="{{ image.title }}" class="c-detail_img">
+								</a>
+								<div class="c-detail_container-info">
+									<p class="c-detail_container-info-title">{{ relatedEntry.title }}</p>
+									<p class="c-detail_container-info-description">{{ description }}</p>
+								</div>
+
+							</div>
+						{% endif %}
+					</article>
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+
+
+{% endblock %}

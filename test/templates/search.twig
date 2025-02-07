@@ -1,0 +1,38 @@
+{% extends '_layout' %}
+
+{# search query ophalen en alle films laden #}
+
+{% set searchQuery = craft.app.request.getQueryParam('query') %}
+{% set results = craft.entries()
+    .section('entertainment')
+    .search(searchQuery)
+    .all() 
+%}
+
+{% block content %}
+	<div class="container">
+		{% if results|length %}
+			<div class="c-type c-type_search">
+				<div class="c-type_wrapper">
+					<div class="row d-flex justify-content-center">
+						{% for result in results %}
+							{% set image = result.featureImage.one() %}
+							<article class="me-3" style=" width: 420px;">
+								{% if image %}
+									<div class="c-type_thumbnail c-type_thumbnail-search">
+										<a href="{{ result.url }}">
+											<img src="{{ image.getUrl() }}" alt="{{ image.title }}" class="c-list_img">
+										</a>
+                                        <h3 class="c-type_search-title">{{result.title}}</h3>
+									</div>
+								{% endif %}
+							</article>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		{% else %}
+			<p>No results found.</p>
+		{% endif %}
+	</div>
+{% endblock %}

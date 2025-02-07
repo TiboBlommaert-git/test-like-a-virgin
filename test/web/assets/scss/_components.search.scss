@@ -1,0 +1,10 @@
+.c-search {
+    color: $color-white !important;
+    background-color: black !important;
+    border: solid 1px $color-white;
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+    &::placeholder {
+      color: $color-white;
+    }
+  }

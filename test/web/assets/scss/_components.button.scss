@@ -1,0 +1,33 @@
+.c-button {
+    background-color: $color-red;
+    border: none;
+    border-radius: 0.2rem;
+    color: $color-white;
+    &_login {
+      padding: 5px 20px;
+      font-weight: 400;
+    }
+    &_email {
+      width: 12rem;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+    &_banner {
+      margin-top: 2rem;
+      color: black;
+      background-color: $color-white !important;
+      width: 10rem;
+      height: 3.5rem;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-right: 1.5rem;
+      &-info {
+        background-color: $color-gray !important;
+        color: white !important;
+        width: 14rem !important;
+        &-icon {
+          margin-right: 1rem;
+        }
+      }
+    }
+  }

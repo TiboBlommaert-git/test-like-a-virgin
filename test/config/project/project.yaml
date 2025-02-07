@@ -1,0 +1,57 @@
+dateModified: 1738873301
+email:
+  fromEmail: blommaert.tibo@gmail.com
+  fromName: netflix
+  transportType: craft\mail\transportadapters\Sendmail
+fs:
+  hardDisk:
+    hasUrls: true
+    name: 'Hard Disk'
+    settings:
+      path: '@webroot/uploads'
+    type: craft\fs\Local
+    url: '@uploads'
+meta:
+  __names__:
+    3aa660c9-324a-4686-8583-2ab7e0115aac: postEntertainmentType # postEntertainmentType
+    3b19d2f8-2b9a-4d60-ae61-4c7713c516fe: 'email selection' # email selection
+    6bc1ef96-30d0-4b34-ae45-47713a6e9b69: 'Post Genre' # Post Genre
+    6e825c3e-3b49-48fb-ab65-346510868571: EntertainmentType # EntertainmentType
+    9e27802e-6bd7-4afa-9df4-4bbf1f1988b2: Entertainment # Entertainment
+    32f9b698-4e20-4835-a92c-243379e2b1d6: Episode # Episode
+    42d22dbe-84d2-4001-9678-7563afb30b6d: netflix # netflix
+    51b7b048-19d2-4c78-a4d3-64b8740dffbb: netflix # netflix
+    79dfc50b-c222-4ba2-86bc-a3dfd89e2fa2: Season # Season
+    95f9b4e5-2123-41a0-9124-911701f0c58d: Image # Image
+    403f3a9f-eb7f-404e-b0e4-754daa5b01aa: Images # Images
+    753ffc43-395f-4655-a381-bcd7bd07890b: Seasons # Seasons
+    68814eaa-a5b4-4a86-8131-22f7ad4133dc: season # season
+    96782f9a-0289-46af-8ade-5f412cd0f6bc: Rating # Rating
+    90615541-1ac1-4e32-a20a-53353d40890f: Email # Email
+    a7d68b1a-5684-4525-ab68-703c86d22c68: Entertainment # Entertainment
+    a966a687-dd86-4ba3-89ed-47c53ddd1b6b: Text # Text
+    dbae1d57-173a-4d08-9145-9a1a454fea16: email # email
+    dcb6caf4-698e-40a8-8a42-09aa056bb219: episodes # episodes
+    dccc9516-b78b-4350-92de-3ccfd3c5eed5: Genres # Genres
+plugins:
+  contact-form:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  freeform:
+    edition: express
+    enabled: true
+    schemaVersion: 5.4.2
+system:
+  edition: solo
+  live: true
+  name: netflix
+  schemaVersion: 5.6.0.2
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  require2fa: false
+  requireEmailVerification: true
