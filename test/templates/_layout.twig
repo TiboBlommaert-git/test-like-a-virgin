@@ -5,7 +5,9 @@
 		<title>{{ siteName }}</title>
 		<meta content="width=device-width, initial-scale=1.0" name="viewport">
 		<link href="{{ alias('@web') }}/assets/css/main.css" rel="stylesheet">
-		<script src="{{ siteUrl('assets/js/main.js') }}"></script>
+		<script src="https://unpkg.com/i18next/i18next.js"></script>
+		<script src="http://test.ddev.site/assets/js/main.js"></script>
+		{# <script src="http://test.ddev.site/assets/js/language.js"></script> #}
 		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	</head>
 	<body>
@@ -26,11 +28,20 @@
 							</div>
 							<div class="d-flex justify-content-center align-items-center">
 								<input type="text" class="c-search" id="search-input" placeholder="Search blog posts..." autocomplete="off" value="{{ searchQuery | default('') }}">
-								<a href="" class="c-navoverzicht_link">kids</a>
+								<form id="languageContent">
+									<select name="language" class="c-nav_settings-layout" onchange="changeLanguage(this)" id="languageSwitcher">
+										{% for site in craft.app.sites.allSites %}
+											<option value="{{ site.baseUrl('/entertainment') }}" {{ site.handle == craft.app.sites.currentSite.handle ? 'selected' : '' }}>
+												{{ site.language }}
+											</option>
+										{% endfor %}
+									</select>
+								</form>
+								{# <a href="" class="c-navoverzicht_link">kids</a>
 								<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="#fff" class="bi bi-bell c-navoverzicht_search" viewbox="0 0 16 16">
 									<path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
 								</svg>
-								<img src="/uploads/images/Netflix-avatar.png" alt="" class="c-navoverzicht_avatar">
+								<img src="/uploads/images/Netflix-avatar.png" alt="" class="c-navoverzicht_avatar"> #}
 							</div>
 						</nav>
 					</div>

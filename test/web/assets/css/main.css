@@ -11880,6 +11880,14 @@ p {
   display: flex !important;
   flex-flow: row;
 }
+.c-nav_settings-layout {
+  margin-left: 1rem;
+  border-radius: 0.2rem;
+  padding: 3px;
+  width: 90px;
+  background-color: black !important;
+  color: #ffffff;
+}
 .c-nav_settings-language {
   padding: 3px;
   appearance: none;
@@ -11893,6 +11901,9 @@ p {
 }
 .c-nav_settings-language-menu {
   background-color: transparent !important;
+}
+.c-nav_settings-language-layout {
+  width: 50px;
 }
 .c-nav_settings-language-container {
   position: relative;

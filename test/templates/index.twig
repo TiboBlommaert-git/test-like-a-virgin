@@ -6,8 +6,9 @@
 		<meta content="width=device-width, initial-scale=1.0" name="viewport">
 		<link href="{{ alias('@web') }}/assets/css/main.css" rel="stylesheet">
 		<script src="https://unpkg.com/i18next/i18next.js"></script>
-		<script src="{{ siteUrl('assets/js/language.js') }}"></script>
-		<script src="{{ siteUrl('assets/js/main.js') }}"></script>
+		<script src="http://test.ddev.site/assets/js/main.js"></script>
+		{# <script src="http://test.ddev.site/assets/js/language.js"></script> #}
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	</head>
 	<body>
 		{% set navSegment = craft.app.request.getSegment(1) %}
@@ -21,11 +22,15 @@
 							</div>
 							<div class="c-nav_settings d-flex align-items-center">
 								<div class="c-nav_settings-language-container">
-									<select class="c-nav_settings-language" id="languageSwitcher">
-										<option value="nl">Nederlands</option>
-										<option value="en">English</option>
-										<option value="de">German</option>
+									<form id="languageContent">
+									<select name="language" class="c-nav_settings-layout" onchange="changeLanguage(this)" id="languageSwitcher">
+										{% for site in craft.app.sites.allSites %}
+											<option value="{{ site.baseUrl('/entertainment') }}" {{ site.handle == craft.app.sites.currentSite.handle ? 'selected' : '' }}>
+												{{ site.language }}
+											</option>
+										{% endfor %}
 									</select>
+								</form>
 								</div>
 								<a href="{{ siteUrl('entertainment') }}" class="c-button c-button_login d-flex justify-content-center align-items-center" data-i18n="login">Inloggen</a>
 							</div>

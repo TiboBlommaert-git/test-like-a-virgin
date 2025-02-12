@@ -10,6 +10,14 @@
     &_settings {
       display: flex !important;
       flex-flow: row;
+      &-layout{
+        margin-left: 1rem;
+        border-radius: 0.2rem;
+        padding: 3px;
+        width: 90px;
+        background-color: black !important;
+        color: $color-white;
+      }
       &-language {
         padding: 3px;
         appearance: none;
@@ -22,6 +30,9 @@
         border-radius: 0.2rem;
         &-menu {
           background-color: transparent !important;
+        }
+        &-layout{
+          width: 50px;
         }
         &-container {
           position: relative;

@@ -18,13 +18,13 @@ previewTargets:
       -
         - refresh
         - '1'
-propagationMethod: all
+propagationMethod: siteGroup
 siteSettings:
   0ef9cd95-865c-4e20-99d6-5b7a2d47d2d8: # netflix-nl
     enabledByDefault: true
     hasUrls: true
-    template: entertainmentNL/_entry.twig
-    uriFormat: 'entertainmentNL/{slug}'
+    template: entertainment/_entry.twig
+    uriFormat: 'entertainment/{slug}'
   42d22dbe-84d2-4001-9678-7563afb30b6d: # netflix
     enabledByDefault: true
     hasUrls: true
@@ -33,6 +33,6 @@ siteSettings:
   f1257522-cecb-4dba-aeae-c2f767c99f89: # netflix-fr
     enabledByDefault: true
     hasUrls: true
-    template: entertainmentFR/_entry.twig
-    uriFormat: 'entertainmentFR/{slug}'
+    template: entertainment/_entry.twig
+    uriFormat: 'entertainment/{slug}'
 type: channel

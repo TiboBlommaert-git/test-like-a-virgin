@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     i18next.init({
-        lng: "nl", // Default language
+        lng: "en", // Default language
         debug: true,
         resources: {
             nl: {
