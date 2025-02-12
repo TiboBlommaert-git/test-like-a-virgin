@@ -1,0 +1,28 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: aa26fb79-484f-4c39-8389-e329b0a9a88a # Form
+handle: form
+maxAuthors: 1
+name: Form
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  42d22dbe-84d2-4001-9678-7563afb30b6d: # netflix
+    enabledByDefault: true
+    hasUrls: true
+    template: form/_entry.twig
+    uriFormat: 'form/{slug}'
+type: channel

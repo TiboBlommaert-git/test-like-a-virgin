@@ -58,6 +58,7 @@ function renderGenreChart(canvasId) {
   });
 }
 
+
 document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', handleScroll);
   handleSearch();
@@ -65,6 +66,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const defaultSeasonId = 'season-1';
   showEpisodes(defaultSeasonId);
 });
+
+
+// "welcome": "Unlimited Series, Movies and a lot more to watch",
+
 
 
 // window.addEventListener('scroll', function() {

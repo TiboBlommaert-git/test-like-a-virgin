@@ -1,0 +1,9 @@
+baseUrl: 'http://test.ddev.site/nl'
+enabled: '1'
+handle: netflixNl
+hasUrls: true
+language: nl
+name: netflix-nl
+primary: false
+siteGroup: 51b7b048-19d2-4c78-a4d3-64b8740dffbb # netflix
+sortOrder: 2

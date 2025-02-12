@@ -1,0 +1,9 @@
+baseUrl: 'http://test.ddev.site/fr'
+enabled: '1'
+handle: netflixFr
+hasUrls: true
+language: fr
+name: netflix-fr
+primary: false
+siteGroup: 51b7b048-19d2-4c78-a4d3-64b8740dffbb # netflix
+sortOrder: 3

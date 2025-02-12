@@ -41,7 +41,15 @@ fieldLayouts:
 handle: genres
 name: Genres
 siteSettings:
+  0ef9cd95-865c-4e20-99d6-5b7a2d47d2d8: # netflix-nl
+    hasUrls: true
+    template: entertainment/_genres
+    uriFormat: 'entertainment/genres/{slug}'
   42d22dbe-84d2-4001-9678-7563afb30b6d: # netflix
+    hasUrls: true
+    template: entertainment/_genres
+    uriFormat: 'entertainment/genres/{slug}'
+  f1257522-cecb-4dba-aeae-c2f767c99f89: # netflix-fr
     hasUrls: true
     template: entertainment/_genres
     uriFormat: 'entertainment/genres/{slug}'

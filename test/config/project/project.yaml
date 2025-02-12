@@ -1,4 +1,4 @@
-dateModified: 1738873301
+dateModified: 1739282138
 email:
   fromEmail: blommaert.tibo@gmail.com
   fromName: netflix
@@ -13,6 +13,7 @@ fs:
     url: '@uploads'
 meta:
   __names__:
+    0ef9cd95-865c-4e20-99d6-5b7a2d47d2d8: netflix-nl # netflix-nl
     3aa660c9-324a-4686-8583-2ab7e0115aac: postEntertainmentType # postEntertainmentType
     3b19d2f8-2b9a-4d60-ae61-4c7713c516fe: 'email selection' # email selection
     6bc1ef96-30d0-4b34-ae45-47713a6e9b69: 'Post Genre' # Post Genre
@@ -30,18 +31,12 @@ meta:
     90615541-1ac1-4e32-a20a-53353d40890f: Email # Email
     a7d68b1a-5684-4525-ab68-703c86d22c68: Entertainment # Entertainment
     a966a687-dd86-4ba3-89ed-47c53ddd1b6b: Text # Text
+    aa26fb79-484f-4c39-8389-e329b0a9a88a: Form # Form
     dbae1d57-173a-4d08-9145-9a1a454fea16: email # email
     dcb6caf4-698e-40a8-8a42-09aa056bb219: episodes # episodes
     dccc9516-b78b-4350-92de-3ccfd3c5eed5: Genres # Genres
-plugins:
-  contact-form:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
-  freeform:
-    edition: express
-    enabled: true
-    schemaVersion: 5.4.2
+    f9ce2410-0a07-42af-8f96-5c3eedff428a: Form # Form
+    f1257522-cecb-4dba-aeae-c2f767c99f89: netflix-fr # netflix-fr
 system:
   edition: solo
   live: true
